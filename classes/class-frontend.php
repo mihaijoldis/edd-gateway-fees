@@ -28,7 +28,7 @@ class EDD_GF_Frontend {
 		$fee = $this->calculate_gateway_fee( $gateway );
 		
 		if ($fee !== '0' && $fee !== '0.0' && $fee !== '0.00'){
-			EDD()->fees->add_fee( $fee, edd_get_gateway_checkout_label( $gateway ) . ' ' .__( 'fee', 'edd_opg'), 'gateway_fee' );
+			EDD()->fees->add_fee( $fee, edd_get_gateway_checkout_label( $gateway ) . ' ' .__( 'fee', 'edd_pf'), 'gateway_fee' );
 		}
 	}
 	

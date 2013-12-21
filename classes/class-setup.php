@@ -24,8 +24,8 @@ class EDD_GF_Setup {
 	public function is_wp_36_and_edd_activated() {
 		global $wp_version;
 		if ( version_compare( $wp_version, '3.7', '< ' ) ) {
-			if ( is_plugin_active( edd_opg()->basename ) ) {
-				deactivate_plugins( edd_opg()->basename );
+			if ( is_plugin_active( edd_gf()->basename ) ) {
+				deactivate_plugins( edd_gf()->basename );
 				unset( $_GET[ 'activate' ] );
 				add_action( 'admin_notices', array(
 					 $this,
@@ -33,8 +33,8 @@ class EDD_GF_Setup {
 				) );
 			}
 		} else if ( !class_exists( 'Easy_Digital_Downloads' ) || ( version_compare( EDD_VERSION, '1.7' ) < 0 ) ) {
-			if ( is_plugin_active( edd_opg()->basename ) ) {
-				deactivate_plugins( edd_opg()->basename );
+			if ( is_plugin_active( edd_gf()->basename ) ) {
+				deactivate_plugins( edd_gf()->basename );
 				unset( $_GET[ 'activate' ] );
 				add_action( 'admin_notices', array(
 					 $this,

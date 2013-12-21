@@ -92,8 +92,10 @@ class EDD_GF {
 	public function includes() {
 		require_once edd_gf_plugin_dir . 'classes/class-setup.php';
 		new EDD_GF_Setup;
-		require_once edd_gf_plugin_dir . 'classes/class-settings.php';
-		require_once edd_gf_plugin_dir . 'classes/class-frontend.php';
+		if ( class_exists( 'Easy_Digital_Downlaods' ) ){
+			require_once edd_gf_plugin_dir . 'classes/class-settings.php';
+			require_once edd_gf_plugin_dir . 'classes/class-frontend.php';
+		}
 	}
 }
 /**
