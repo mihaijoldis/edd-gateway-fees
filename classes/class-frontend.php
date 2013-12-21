@@ -9,8 +9,10 @@ class EDD_GF_Frontend {
 	}
 	function gateway_fee() {
 		EDD()->fees->remove_fee('gateway_fee');
+		$gateways_array = edd_get_payment_gateways();
+		$gateway = edd_get_chosen_gateway();
 		$fee = EDD_GF_Frontend::calculate_gateway_fee();
-		EDD()->fees->add_fee( $fee, 'Gateway Fee', 'gateway_fee' );
+		EDD()->fees->add_fee( $fee, $gateways_array[$gateway]['checkout_label'].__( 'fee', 'edd_opg'), 'gateway_fee' );
 	}
 	function calculate_gateway_fee(){
 		global $edd_options;
