@@ -8,6 +8,7 @@ class EDD_GF_Frontend {
 		add_action( 'init', array($this,'gateway_fee' ));
 	}
 	function gateway_fee() {
+		EDD()->fees->remove_fee('gateway_fee');
 		$fee = EDD_GF_Frontend::calculate_gateway_fee();
 		EDD()->fees->add_fee( $fee, 'Gateway Fee', 'gateway_fee' );
 	}
@@ -31,9 +32,8 @@ class EDD_GF_Frontend {
 			if ( !empty($percent) ){
 				$total = $total + $flat;
 			}
-			
 		// return total
-		return $flat;
+		return $total;
 		
 	}
 }
