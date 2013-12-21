@@ -5,7 +5,7 @@ if ( !defined( 'ABSPATH' ) ) {
 
 class EDD_GF_Settings {
 	public function __construct() {
-		add_filter('edd_settings_extensions', array( $this, 'edd_gf_add_settings') );
+		add_filter('edd_settings_gateways', array( $this, 'edd_gf_add_settings') );
 	}
 	
 	function edd_gf_add_settings($settings) {
