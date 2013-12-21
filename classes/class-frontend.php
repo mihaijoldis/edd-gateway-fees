@@ -19,7 +19,7 @@ class EDD_GF_Frontend {
 		// which gateway
 		$gateway = edd_get_chosen_gateway();
 		// apply % if appl
-			$percent = $edd_options['edd_gf_percent_'.$gateway];
+			$percent =  edd_get_option('edd_gf_percent_'.$gateway,'');
 			// sanitize percent
 			$percent = preg_replace('/[^\\d.]+/', '', $percent);
 			$fee = 0;
@@ -27,7 +27,7 @@ class EDD_GF_Frontend {
 				$fee = ($total * (1+($percent/100))) - $total;
 			}
 		// apply flat if appl
-			$flat = $edd_options['edd_gf_flat_'.$gateway];
+			$flat = edd_get_option('edd_gf_flat_'.$gateway,'');
 			// sanitize flat
 			$flat = preg_replace('/[^\\d.]+/', '', $flat);
 			if ( !empty($percent) ){
