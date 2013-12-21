@@ -12,8 +12,8 @@ class EDD_GF_Settings {
 	$edd_gf_settings = array(
 		array(
 			'id' => 'edd_gf_settings',
-			'name' => __('Gateway Fees', 'edd_opg'),
-			'desc' => __('Configure your fees for gateways', 'edd_opg'),
+			'name' => __('Gateway Fees', 'edd_gf'),
+			'desc' => __('Configure your fees for gateways', 'edd_gf'),
 			'type' => 'header'
 		),
 	);
@@ -22,15 +22,15 @@ class EDD_GF_Settings {
 	foreach ($gateways_array as $key => $val){
 		$gateways [] = array(
 			'id' => 'edd_gf_percent_'.$key,
-			'name' => __( 'Percent fee for ', 'edd_opg' ).$val['admin_label'],
-			'desc' => __( 'Leave blank for no % fee.', 'edd_opg' ),
+			'name' => __( 'Percent fee for ', 'edd_gf' ).$val['admin_label'],
+			'desc' => __( 'Leave blank for no % fee.', 'edd_gf' ),
 			'type' => 'text',
 			'std'  => ''
 		);
 		$gateways [] = array(
 			'id' => 'edd_gf_flat_'.$key,
-			'name' => __( 'Flat fee for ', 'edd_opg' ).$val['admin_label'],
-			'desc' => __( 'Leave blank for no flat fee.', 'edd_opg' ),
+			'name' => __( 'Flat fee for ', 'edd_gf' ).$val['admin_label'],
+			'desc' => __( 'Leave blank for no flat fee.', 'edd_gf' ),
 			'type' => 'text',
 			'std'  => ''
 		);
