@@ -79,4 +79,3 @@ class EDD_GF_Setup {
 		}
 	}
 }
-new EDD_GF_Setup;

@@ -53,6 +53,7 @@ class EDD_GF {
 			self::$instance = new EDD_GF;
 			self::$instance->define_globals();
 			self::$instance->includes();
+			new EDD_GF_Setup;
 		}
 		return self::$instance;
 	}
