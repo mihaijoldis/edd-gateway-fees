@@ -38,8 +38,4 @@ class EDD_GF_Frontend {
 		
 	}
 }
-new EDD_GF_Frontend;ee;
-		
-	}
-}
 new EDD_GF_Frontend;
