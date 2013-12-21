@@ -13,13 +13,13 @@ class EDD_GF_Frontend {
 		EDD()->fees->add_fee( $fee, 'Gateway Fee', 'gateway_fee' );
 	}
 	function calculate_gateway_fee(){
-		global $edd_settings;
+		global $edd_options;
 		// get total
 		$total = edd_get_cart_total();
 		// which gateway
 		$gateway = edd_get_chosen_gateway();
 		// apply % if appl
-			$percent = $edd_settings['edd_gf_percent_'.$gateway];
+			$percent = $edd_options['edd_gf_percent_'.$gateway];
 			// sanitize percent
 			$percent = preg_replace('/[^\\d.]+/', '', $percent);
 			$fee = 0;
@@ -27,7 +27,7 @@ class EDD_GF_Frontend {
 				$fee = ($total * (1+($percent/100))) - $total;
 			}
 		// apply flat if appl
-			$flat = $edd_settings['edd_gf_flat_'.$gateway];
+			$flat = $edd_options['edd_gf_flat_'.$gateway];
 			// sanitize flat
 			$flat = preg_replace('/[^\\d.]+/', '', $flat);
 			if ( !empty($percent) ){
@@ -35,6 +35,10 @@ class EDD_GF_Frontend {
 			}
 		// return total
 		return $fee;
+		
+	}
+}
+new EDD_GF_Frontend;ee;
 		
 	}
 }
