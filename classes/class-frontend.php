@@ -22,18 +22,19 @@ class EDD_GF_Frontend {
 			$percent = $edd_settings['edd_gf_percent_'.$gateway];
 			// sanitize percent
 			$percent = preg_replace('/[^\\d.]+/', '', $percent);
+			$fee = 0;
 			if ( !empty($percent) ){
-				$total = $total + $total * $percent;
+				$fee = ($total * (1+($percent/100))) - $total;
 			}
 		// apply flat if appl
 			$flat = $edd_settings['edd_gf_flat_'.$gateway];
 			// sanitize flat
 			$flat = preg_replace('/[^\\d.]+/', '', $flat);
 			if ( !empty($percent) ){
-				$total = $total + $flat;
+				$fee = $fee + $flat;
 			}
 		// return total
-		return $total;
+		return $fee;
 		
 	}
 }
