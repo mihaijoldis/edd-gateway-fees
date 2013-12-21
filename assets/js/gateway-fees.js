@@ -1,9 +1,10 @@
+var edd_global_vars;
 jQuery(document).ready(function($) {
-    $body.on('change', '#edd-gateway option', function (event) {
+    $('select#edd-gateway, input.edd-gateway').change( function (e) {
 
         var $this = $(this), postData = {
-            action: 'edd_remove_discount',
-            code: $this.data('code')
+            action: 'edd_calculate_gateway_fees',
+            gateway: $this.val()
         };
 
         $.ajax({
@@ -12,7 +13,8 @@ jQuery(document).ready(function($) {
             dataType: "json",
             url: edd_global_vars.ajaxurl,
             success: function (discount_response) {
-                recalculate_taxes();
+				$('#edd_checkout_cart').replaceWith(discount_response.html);
+				$('.edd_cart_amount').html(discount_response.total);
             }
         }).fail(function (data) {
             console.log(data);
