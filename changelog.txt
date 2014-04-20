@@ -1,2 +1,5 @@
+1.1: 4/21/2014
+* Don't charge fees on free purchases
+
 1.0: 12/24/2013
  * Initial release

@@ -13,6 +13,10 @@ class EDD_GF_Frontend {
 	function gateway_fee( $gateway = false ) {
 
 		EDD()->fees->remove_fee('gateway_fee');
+
+		if ( edd_get_cart_total() == 0 ) {
+			return;
+		}
 		
 		// which gateway
 		if( ! $gateway ) {
@@ -35,6 +39,7 @@ class EDD_GF_Frontend {
 	function calculate_gateway_fee( $gateway = false ){
 
 		global $edd_options;
+		
 		// get total
 		$total = edd_get_cart_total();
 		
