@@ -60,22 +60,33 @@ class EDD_GF_Frontend {
 		
 		$fee = 0;
 		
-		if ( !empty($percent) ){
-			$percent_fee = ($total * (1+($percent/100))) - $total;
-		}
-		
 		// apply flat if appl
 		$flat = edd_get_option('edd_gf_flat_'.$gateway,'');
 		
 		// sanitize flat
 		$flat = preg_replace('/[^\\d.]+/', '', $flat);
 		
-		if ( !empty( $percent_fee ) ) {
-			$fee += $percent_fee;
+		if ( ! empty( $flat ) && ! empty($percent) ){
+			// paypal style
+			$percent = $percent/100;
+			$fee     = ($total + $flat) / (1 - $percent);
+			$fee     = round($fee, 2);
+			$fee     = $fee - $total;
 		}
-
-		if ( ! empty( $flat ) ) {
-			$fee += $flat;
+		else if ( ! empty( $flat ) ){
+			// simple add flat fee
+			$fee     = $flat;
+		}
+		else if ( ! empty($percent) ){
+			// simple add percentage fee
+			$percent = $percent/100;
+			$fee     = ($total) / (1 - $percent);
+			$fee     = round($fee, 2);
+			$fee     = $fee - $total;
+		}
+		else{
+			// no fee to apply
+			
 		}
 		
 		// return total
