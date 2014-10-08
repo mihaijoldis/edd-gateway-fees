@@ -1,3 +1,6 @@
+1.2: 10/2/2014
+* Fixes issue with mixed percentage & flat rate gateway fee
+
 1.1: 4/21/2014
 * Don't charge fees on free purchases
 
