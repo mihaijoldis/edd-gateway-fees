@@ -6,7 +6,7 @@
  * Author:              Chris Christoff
  * Author URI:          http://www.chriscct7.com
  *
- * Version:             1.2
+ * Version:             1.3
  * Requires at least:   3.7
  * Tested up to:        3.9
  *
@@ -66,7 +66,7 @@ class EDD_GF {
 		}
 		// Plugin Version
 		if ( !defined( 'edd_gf_plugin_version' ) ) {
-			define( 'edd_gf_plugin_version', '1.2' );
+			define( 'edd_gf_plugin_version', '1.3' );
 		}
 		// Plugin Root File
 		if ( !defined( 'edd_gf_plugin_file' ) ) {
@@ -110,4 +110,6 @@ class EDD_GF {
 function EDD_GF() {
 	return EDD_GF::instance();
 }
-EDD_GF();
+if ( class_exists( 'Easy_Digital_Downloads' ) ){
+	EDD_GF();
+}
