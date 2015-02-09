@@ -101,7 +101,7 @@ class EDD_GF {
 		$locale        = apply_filters( 'plugin_locale', get_locale(), 'edd_gf' );
 		$mofile        = sprintf( '%1$s-%2$s.mo', 'edd_gf', $locale );
 
-		$mofile_local  = trailingslashit( fes_plugin_dir . 'languages' ) . $mofile;
+		$mofile_local  = trailingslashit( edd_gf_plugin_dir . 'languages' ) . $mofile;
 		$mofile_global = WP_LANG_DIR . '/edd_gf/' . $mofile;
 
 		if ( file_exists( $mofile_global ) ) {
