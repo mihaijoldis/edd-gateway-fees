@@ -41,7 +41,6 @@ class EDD_GF_Settings {
 			'name' => __( 'Label for ', 'edd_gf' ).$val['admin_label'],
 			'desc' => __( 'This is the name of the fee shown to customers on the checkout page.', 'edd_gf' ),
 			'type' => 'text',
-			'size' => 'small',
 			'std'  => $val['admin_label'] . ' Fee'
 		);
 	}
