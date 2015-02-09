@@ -6,15 +6,15 @@
  * Author:              Chris Christoff
  * Author URI:          http://www.chriscct7.com
  *
- * Version:             1.3
+ * Version:             1.4
  * Requires at least:   3.7
- * Tested up to:        3.9
+ * Tested up to:        4.2
  *
- * Text Domain:         edd-gf
- * Domain Path:         /edd-gf/languages/
+ * Text Domain:         edd_gf
+ * Domain Path:         /edd_gf/languages/
  *
  * @category            Plugin
- * @copyright           Copyright © 2013 Chris Christoff
+ * @copyright           Copyright © 2015 Chris Christoff
  * @author              Chris Christoff
  * @package             EDD GF
  */
@@ -57,7 +57,7 @@ class EDD_GF {
 		return self::$instance;
 	}
 	public function define_globals() {
-		$this->title    = __( 'Gateway Fees', 'edd-gf' );
+		$this->title    = __( 'Gateway Fees', 'edd_gf' );
 		$this->file     = __FILE__;
 		$this->basename = apply_filters( 'edd_edd_gf_plugin_basename', plugin_basename( $this->file ) );
 		// Plugin Name
@@ -66,7 +66,7 @@ class EDD_GF {
 		}
 		// Plugin Version
 		if ( !defined( 'edd_gf_plugin_version' ) ) {
-			define( 'edd_gf_plugin_version', '1.3' );
+			define( 'edd_gf_plugin_version', '1.4' );
 		}
 		// Plugin Root File
 		if ( !defined( 'edd_gf_plugin_file' ) ) {

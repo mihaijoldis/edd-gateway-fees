@@ -36,6 +36,14 @@ class EDD_GF_Settings {
 			'size' => 'small',
 			'std'  => ''
 		);
+		$gateways [] = array(
+			'id' => 'edd_gf_label_'.$key,
+			'name' => __( 'Label for ', 'edd_gf' ).$val['admin_label'],
+			'desc' => __( 'This is the name of the fee shown to customers on the checkout page.', 'edd_gf' ),
+			'type' => 'text',
+			'size' => 'small',
+			'std'  => $val['admin_label'] . ' Fee'
+		);
 	}
 
 	$edd_gf_settings = array_merge( $edd_gf_settings, $gateways );

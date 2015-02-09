@@ -47,7 +47,7 @@ class EDD_GF_Setup {
 ?>
 	<div class="updated">
 		<p><?php
-		printf( __( '<strong>Notice:</strong> Easy Digital Downloads Gateway Fees requires Easy Digital Downloads 1.7 or higher in order to function properly.', 'edd_fes' ) );
+		printf( __( '<strong>Notice:</strong> Easy Digital Downloads Gateway Fees requires Easy Digital Downloads 1.7 or higher in order to function properly.', 'edd_gf' ) );
 ?>
 		</p>
 	</div>
@@ -57,7 +57,7 @@ class EDD_GF_Setup {
 ?>
 	<div class="updated">
 		<p><?php
-		printf( __( '<strong>Notice:</strong> Easy Digital Downloads Gateway Fees requires WordPress 3.7 or higher in order to function properly.', 'edd_fes' ) );
+		printf( __( '<strong>Notice:</strong> Easy Digital Downloads Gateway Fees requires WordPress 3.7 or higher in order to function properly.', 'edd_gf' ) );
 ?>
 		</p>
 	</div>
