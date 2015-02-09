@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EDD Gateway Fees\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-21 02:34-0500\n"
-"PO-Revision-Date: 2013-12-21 02:34-0500\n"
+"POT-Creation-Date: 2015-02-09 11:12-0500\n"
+"PO-Revision-Date: 2015-02-09 11:12-0500\n"
 "Last-Translator: Chris Christoff <translate@chriscct7.com>\n"
 "Language-Team: Chris Christoff <hello@chriscct7.com>\n"
 "Language: en_US\n"
@@ -15,12 +15,8 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.7.4\n"
 "X-Poedit-SearchPath-0: .\n"
-
-#: edd-gateway-fees.php:61 classes/class-settings.php:15
-msgid "Gateway Fees"
-msgstr ""
 
 #: assets/lib/EDD_License_Handler.php:126
 #, php-format
@@ -31,8 +27,12 @@ msgstr ""
 msgid "Deactivate License"
 msgstr ""
 
-#: classes/class-frontend.php:31
+#: classes/class-frontend.php:34
 msgid "fee"
+msgstr ""
+
+#: classes/class-settings.php:15 edd-gateway-fees.php:60
+msgid "Gateway Fees"
 msgstr ""
 
 #: classes/class-settings.php:16
@@ -48,12 +48,20 @@ msgstr ""
 msgid "Leave blank for no % fee."
 msgstr ""
 
-#: classes/class-settings.php:32
+#: classes/class-settings.php:33
 msgid "Flat fee for "
 msgstr ""
 
-#: classes/class-settings.php:33
+#: classes/class-settings.php:34
 msgid "Leave blank for no flat fee."
+msgstr ""
+
+#: classes/class-settings.php:41
+msgid "Label for "
+msgstr ""
+
+#: classes/class-settings.php:42
+msgid "This is the name of the fee shown to customers on the checkout page."
 msgstr ""
 
 #: classes/class-setup.php:50

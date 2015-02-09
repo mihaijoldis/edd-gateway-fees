@@ -1,4 +1,4 @@
-# EDD Gateway Fees (v 1.3) #
+# EDD Gateway Fees (v 1.4) #
 
 ## Who this README file is for ##
 This readme file is to share information to plugin & theme developers.
