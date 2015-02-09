@@ -90,9 +90,28 @@ class EDD_GF {
 		$license = new EDD_License( __FILE__, edd_gf_plugin_name, edd_gf_plugin_version, 'Chris Christoff' );
 	}
 	public function includes() {
+		add_action( 'init', array( $this, 'load_textdomain' ) );
+
 		require_once edd_gf_plugin_dir . 'classes/class-setup.php';
 		require_once edd_gf_plugin_dir . 'classes/class-settings.php';
 		require_once edd_gf_plugin_dir . 'classes/class-frontend.php';
+	}
+
+	public function load_textdomain() {
+		$locale        = apply_filters( 'plugin_locale', get_locale(), 'edd_gf' );
+		$mofile        = sprintf( '%1$s-%2$s.mo', 'edd_gf', $locale );
+
+		$mofile_local  = trailingslashit( fes_plugin_dir . 'languages' ) . $mofile;
+		$mofile_global = WP_LANG_DIR . '/edd_gf/' . $mofile;
+
+		if ( file_exists( $mofile_global ) ) {
+			return load_textdomain( 'edd_gf', $mofile_global );
+		} elseif ( file_exists( $mofile_local ) ) {
+			return load_textdomain( 'edd_gf', $mofile_local );
+		}
+		else{
+			load_plugin_textdomain( 'edd_gf', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		}
 	}
 }
 /**
