@@ -30,9 +30,10 @@ class EDD_GF_Frontend {
 		$gateways_array = edd_get_payment_gateways();
 
 		$fee = $this->calculate_gateway_fee( $gateway );
-		$fee = apply_filters( 'edd_gf_fee_total_before_add_fee', $fee );
 
 		$label = edd_get_option( 'edd_gf_label_' . $gateway, edd_get_gateway_checkout_label( $gateway ) . ' ' .__( 'fee', 'edd_gf') );
+		
+		$fee = apply_filters( 'edd_gf_fee_total_before_add_fee', $fee );
 		
 		if ($fee !== '0' && $fee !== '0.0' && $fee !== '0.00'){
 			EDD()->fees->add_fee( $fee, $label, 'gateway_fee' );
