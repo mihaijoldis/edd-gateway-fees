@@ -6,9 +6,9 @@
  * Author:              Chris Christoff
  * Author URI:          http://www.chriscct7.com
  *
- * Version:             1.4
+ * Version:             1.4.1
  * Requires at least:   3.7
- * Tested up to:        4.2
+ * Tested up to:        4.3
  *
  * Text Domain:         edd_gf
  * Domain Path:         /edd_gf/languages/
@@ -66,7 +66,7 @@ class EDD_GF {
 		}
 		// Plugin Version
 		if ( !defined( 'edd_gf_plugin_version' ) ) {
-			define( 'edd_gf_plugin_version', '1.4' );
+			define( 'edd_gf_plugin_version', '1.4.1' );
 		}
 		// Plugin Root File
 		if ( !defined( 'edd_gf_plugin_file' ) ) {
