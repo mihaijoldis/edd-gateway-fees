@@ -14,7 +14,7 @@ class EDD_GF_Frontend {
 
 		EDD()->fees->remove_fee('gateway_fee');
 
-		if ( edd_get_cart_total() == 0 ) {
+		if ( edd_get_cart_total(); == 0 ) {
 			return;
 		}
 		
@@ -30,6 +30,7 @@ class EDD_GF_Frontend {
 		$gateways_array = edd_get_payment_gateways();
 
 		$fee = $this->calculate_gateway_fee( $gateway );
+		$fee = apply_filters( 'edd_gf_fee_total_before_add_fee', $fee );
 
 		$label = edd_get_option( 'edd_gf_label_' . $gateway, edd_get_gateway_checkout_label( $gateway ) . ' ' .__( 'fee', 'edd_gf') );
 		
