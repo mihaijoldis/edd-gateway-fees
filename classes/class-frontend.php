@@ -14,7 +14,7 @@ class EDD_GF_Frontend {
 
 		EDD()->fees->remove_fee('gateway_fee');
 
-		if ( edd_get_cart_total(); == 0 ) {
+		if ( edd_get_cart_total() == 0 ) {
 			return;
 		}
 		
