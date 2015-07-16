@@ -75,9 +75,9 @@ class EDD_GF_Frontend {
 		if ( ! empty( $flat ) && ! empty($percent) ){
 			// paypal style
 			$percent = $percent/100;
-			$fee     = ($total + $flat) / (1 - $percent);
-			$fee     = round($fee, 2);
+			$fee     = ($total + $flat) * (1 + $percent);
 			$fee     = $fee - $total;
+			$fee     = round($fee, 2);
 		}
 		else if ( ! empty( $flat ) ){
 			// simple add flat fee
@@ -86,9 +86,9 @@ class EDD_GF_Frontend {
 		else if ( ! empty($percent) ){
 			// simple add percentage fee
 			$percent = $percent/100;
-			$fee     = ($total) / (1 - $percent);
-			$fee     = round($fee, 2);
+			$fee     = ($total) * (1 + $percent);
 			$fee     = $fee - $total;
+			$fee     = round($fee, 2);
 		}
 		else{
 			// no fee to apply
