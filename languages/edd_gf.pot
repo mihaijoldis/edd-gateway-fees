@@ -1,21 +1,22 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: EDD Gateway Fees\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-09 11:17-0500\n"
+"POT-Creation-Date: 2016-03-14 17:16-0400\n"
 "PO-Revision-Date: 2015-02-09 11:17-0500\n"
 "Last-Translator: Chris Christoff <translate@chriscct7.com>\n"
-"Language-Team: Chris Christoff <hello@chriscct7.com>\n"
+"Language-Team: Chris Christoff <support@easydigitaldownloads.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;_x;_n;esc_attr__;esc_attr_e;esc_html__;"
 "esc_html_e;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: assets/lib/EDD_License_Handler.php:126
@@ -27,7 +28,11 @@ msgstr ""
 msgid "Deactivate License"
 msgstr ""
 
-#: classes/class-frontend.php:34
+#: classes/class-frontend.php:28
+msgid "Go back"
+msgstr ""
+
+#: classes/class-frontend.php:66 classes/class-frontend.php:84
 msgid "fee"
 msgstr ""
 
@@ -64,13 +69,13 @@ msgstr ""
 msgid "This is the name of the fee shown to customers on the checkout page."
 msgstr ""
 
-#: classes/class-setup.php:50
+#: classes/class-setup.php:38
 msgid ""
 "<strong>Notice:</strong> Easy Digital Downloads Gateway Fees requires Easy "
-"Digital Downloads 1.7 or higher in order to function properly."
+"Digital Downloads 2.4 or higher in order to function properly."
 msgstr ""
 
-#: classes/class-setup.php:60
+#: classes/class-setup.php:48
 msgid ""
 "<strong>Notice:</strong> Easy Digital Downloads Gateway Fees requires "
 "WordPress 3.7 or higher in order to function properly."
