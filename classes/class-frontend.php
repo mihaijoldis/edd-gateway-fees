@@ -33,9 +33,19 @@ class EDD_GF_Frontend {
 
 	function fix_edd_chosen_gateway( $enabled_gateway ) {
 		if ( ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] === 'edd_recalculate_taxes' )  ) {
+			if ( $_SERVER['HTTP_REFERER'] ){
+				parse_str(parse_url($_SERVER['HTTP_REFERER'], PHP_URL_QUERY), $gateway);
+				if ( ! empty( $gateway['payment-mode'] ) ) {
+					$enabled_gateway = $gateway['payment-mode'];
+					$enabled_gateway = urldecode( $enabled_gateway );
+					return $enabled_gateway;
+				} else {
+					return $enabled_gateway;
+				}
+			}
 			return $enabled_gateway;
 		}
-
+				
 		$gateways = edd_get_enabled_payment_gateways();
 		$chosen   = isset( $_REQUEST['payment-mode'] ) ? $_REQUEST['payment-mode'] : false;
 		if ( false !== $chosen ) {
@@ -45,7 +55,7 @@ class EDD_GF_Frontend {
 			$enabled_gateway = urldecode( $chosen );
 		} else if ( edd_get_cart_subtotal() <= 0 ) {
 				$enabled_gateway = 'manual';
-			} else {
+		} else {
 			$enabled_gateway = edd_get_default_gateway();
 		}
 		return $enabled_gateway;
