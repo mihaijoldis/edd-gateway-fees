@@ -8,57 +8,6 @@ class EDD_GF_Frontend {
 		add_action( 'init', array( $this, 'default_gateway_fee' ) );
 		add_action( 'wp_ajax_edd_calculate_gateway_fees', array( $this, 'recalculate_gateway_fees' ) );
 		add_action( 'wp_ajax_nopriv_edd_calculate_gateway_fees', array( $this, 'recalculate_gateway_fees' ) );
-		add_filter( 'edd_chosen_gateway', array( $this, 'fix_edd_chosen_gateway' ), 10, 1 );
-		remove_action( 'edd_purchase_form_after_cc_form', 'edd_checkout_submit', 9999 );
-		add_action( 'edd_purchase_form_after_cc_form', array( $this, 'edd_checkout_submit' ), 9999 );
-	}
-
-	function edd_checkout_submit() {
-?>
-		<fieldset id="edd_purchase_submit">
-			<?php do_action( 'edd_purchase_form_before_submit' ); ?>
-
-			<?php edd_checkout_hidden_fields(); ?>
-
-			<?php echo edd_checkout_button_purchase(); ?>
-
-			<?php do_action( 'edd_purchase_form_after_submit' ); ?>
-
-			<?php if ( edd_is_ajax_disabled() ) { ?>
-				<p class="edd-cancel"><a href="<?php echo edd_get_checkout_uri(); ?>"><?php _e( 'Go back', 'easy-digital-downloads' ); ?></a></p>
-			<?php } ?>
-		</fieldset>
-	<?php
-	}
-
-	function fix_edd_chosen_gateway( $enabled_gateway ) {
-		if ( ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] === 'edd_recalculate_taxes' )  ) {
-			if ( $_SERVER['HTTP_REFERER'] ){
-				parse_str(parse_url($_SERVER['HTTP_REFERER'], PHP_URL_QUERY), $gateway);
-				if ( ! empty( $gateway['payment-mode'] ) ) {
-					$enabled_gateway = $gateway['payment-mode'];
-					$enabled_gateway = urldecode( $enabled_gateway );
-					return $enabled_gateway;
-				} else {
-					return $enabled_gateway;
-				}
-			}
-			return $enabled_gateway;
-		}
-				
-		$gateways = edd_get_enabled_payment_gateways();
-		$chosen   = isset( $_REQUEST['payment-mode'] ) ? $_REQUEST['payment-mode'] : false;
-		if ( false !== $chosen ) {
-			$chosen = preg_replace( '/[^a-zA-Z0-9-_]+/', '', $chosen );
-		}
-		if ( ! empty ( $chosen ) ) {
-			$enabled_gateway = urldecode( $chosen );
-		} else if ( edd_get_cart_subtotal() <= 0 ) {
-				$enabled_gateway = 'manual';
-		} else {
-			$enabled_gateway = edd_get_default_gateway();
-		}
-		return $enabled_gateway;
 	}
 
 	function default_gateway_fee() {
