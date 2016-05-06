@@ -1,3 +1,7 @@
+1.5: 5/6/2016:
+* Fix: Fees do not refresh after adding discount
+* Fix: Incorrect gateway fee applied when changing country on checkout
+
 1.4.4: 3/15/2016:
 * Fixes multiple bugs with the selection of the gateway on the checkout page
 
