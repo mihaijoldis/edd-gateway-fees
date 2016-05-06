@@ -22,7 +22,9 @@ jQuery(document).ready(function($) {
                 $('.edd_cart_amount').html(discount_response.total);
             }
         }).fail(function (data) {
-            console.log(data);
+            if ( window.console && window.console.log ) {
+                console.log(data);
+            }
         });
 
         return false;
@@ -44,7 +46,9 @@ jQuery(document).ready(function($) {
 				$('.edd_cart_amount').html(discount_response.total);
             }
         }).fail(function (data) {
-            console.log(data);
+            if ( window.console && window.console.log ) {
+                console.log(data);
+            }
         });
 
         return false;
