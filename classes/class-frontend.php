@@ -18,7 +18,7 @@ class EDD_GF_Frontend {
 			return;
 		}
 
-		$gateway = edd_get_chosen_gateway();
+		$gateway = edd_get_default_gateway();
 
 		$fee = $this->calculate_gateway_fee( $gateway );
 
