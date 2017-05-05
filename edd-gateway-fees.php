@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name:         Easy Digital Downloads - Gateway Fees
- * Plugin URI:          https://easydigitaldownloads.com/extension/gateway-fees/
+ * Plugin URI:          https://easydigitaldownloads.com/downloads/gateway-fees/
  * Description:         Lets store owners charge fees for using gateways
- * Author:              Chris Christoff
- * Author URI:          http://www.chriscct7.com
+ * Author:              Easy Digital Downloads
+ * Author URI:          https://easydigitaldownloads.com
  *
  * Version:             1.5
  * Requires at least:   3.7
@@ -14,8 +14,8 @@
  * Domain Path:         /edd_gf/languages/
  *
  * @category            Plugin
- * @copyright           Copyright © 2015 Chris Christoff
- * @author              Chris Christoff
+ * @copyright           Copyright © 2015 Easy Digital Downloads, LLC
+ * @author              Easy Digital Downloads
  * @package             EDD GF
  */
 if ( !defined( 'ABSPATH' ) ) {
