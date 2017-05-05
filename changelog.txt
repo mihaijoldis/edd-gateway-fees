@@ -1,3 +1,7 @@
+1.5.1: 5/5/2017:
+* Fix: Fees do not refresh after adding discount
+* Fix: Fees do not refresh when changing cart quantities
+
 1.5: 5/6/2016:
 * Fix: Fees do not refresh after adding discount
 * Fix: Incorrect gateway fee applied when changing country on checkout

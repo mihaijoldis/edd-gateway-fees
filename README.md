@@ -1,2 +1,2 @@
-# EDD Gateway Fees (v 1.4.4) #
+# EDD Gateway Fees (v 1.5.1) #
 

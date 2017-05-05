@@ -6,7 +6,7 @@
  * Author:              Easy Digital Downloads
  * Author URI:          https://easydigitaldownloads.com
  *
- * Version:             1.5
+ * Version:             1.5.1
  * Requires at least:   3.7
  * Tested up to:        4.5
  *
@@ -66,7 +66,7 @@ class EDD_GF {
 		}
 		// Plugin Version
 		if ( !defined( 'edd_gf_plugin_version' ) ) {
-			define( 'edd_gf_plugin_version', '1.5' );
+			define( 'edd_gf_plugin_version', '1.5.1' );
 		}
 		// Plugin Root File
 		if ( !defined( 'edd_gf_plugin_file' ) ) {
@@ -87,7 +87,7 @@ class EDD_GF {
 		if ( !class_exists( 'EDD_License' ) ) {
 			require_once edd_gf_plugin_dir . 'assets/lib/EDD_License_Handler.php';
 		}
-		$license = new EDD_License( __FILE__, edd_gf_plugin_name, edd_gf_plugin_version, 'Chris Christoff' );
+		$license = new EDD_License( __FILE__, edd_gf_plugin_name, edd_gf_plugin_version, 'EDD Team' );
 	}
 	public function includes() {
 		add_action( 'init', array( $this, 'load_textdomain' ) );
