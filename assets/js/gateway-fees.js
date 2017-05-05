@@ -29,7 +29,8 @@ jQuery(document).ready(function($) {
 
         return false;
     });
-    $('body').on( 'edd_taxes_recalculated', function (e) {
+
+    $('body').on( 'edd_taxes_recalculated edd_discount_applied edd_discount_removed edd_quantity_updated', function (e) {
 
         var $this = $(this), postData = {
             action: 'edd_calculate_gateway_fees',
