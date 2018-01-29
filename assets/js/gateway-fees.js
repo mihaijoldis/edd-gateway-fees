@@ -32,6 +32,8 @@ jQuery(document).ready(function($) {
 
     $('body').on( 'edd_taxes_recalculated edd_discount_applied edd_discount_removed edd_quantity_updated', function (e) {
 
+        edd_gf_gateway = $( "input[name='edd-gateway']" ).val();
+
         var $this = $(this), postData = {
             action: 'edd_calculate_gateway_fees',
             gateway: edd_gf_gateway
