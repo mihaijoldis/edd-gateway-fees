@@ -6,9 +6,9 @@
  * Author:              Easy Digital Downloads
  * Author URI:          https://easydigitaldownloads.com
  *
- * Version:             1.5.1
+ * Version:             1.5.2
  * Requires at least:   3.7
- * Tested up to:        4.5
+ * Tested up to:        4.9.2
  *
  * Text Domain:         edd_gf
  * Domain Path:         /edd_gf/languages/
@@ -66,7 +66,7 @@ class EDD_GF {
 		}
 		// Plugin Version
 		if ( !defined( 'edd_gf_plugin_version' ) ) {
-			define( 'edd_gf_plugin_version', '1.5.1' );
+			define( 'edd_gf_plugin_version', '1.5.2' );
 		}
 		// Plugin Root File
 		if ( !defined( 'edd_gf_plugin_file' ) ) {

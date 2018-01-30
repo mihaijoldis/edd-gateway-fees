@@ -1,3 +1,6 @@
+1.5.2: 1/30/2018:
+* Fix: Fixed issue with fee being reset to 0 when it shouldn't by adding missing edd_gf_gateway js variable.
+
 1.5.1: 5/5/2017:
 * Fix: Fees do not refresh after adding discount
 * Fix: Fees do not refresh when changing cart quantities
