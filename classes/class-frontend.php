@@ -125,10 +125,10 @@ class EDD_GF_Frontend {
 
 	function recalculate_gateway_fees() {
 
-		edd_debug_log( 'Gateway Fees: recalculate_gateway_fees() running' );
-		edd_debug_log( $_REQUEST['gateway'] );
+		if ( ! empty ( $_REQUEST['action'] ) && $_REQUEST['action'] === 'edd_calculate_gateway_fees' && ! empty( $_REQUEST['gateway'] ) ) {
+			edd_debug_log( 'Gateway Fees: recalculate_gateway_fees() running' );
+			edd_debug_log( $_REQUEST['gateway'] );
 
-		if ( ! empty ( $_REQUEST['action'] ) && $_REQUEST['action'] === 'edd_calculate_gateway_fees' ) {
 			$this->gateway_fee( $_REQUEST['gateway'] );
 			ob_start();
 			edd_checkout_cart();
