@@ -84,7 +84,7 @@ class EDD_GF_Frontend {
 		edd_debug_log( 'Gateway Fees: percent is ' . $percent );
 
 		// sanitize percent
-		$percent = preg_replace( '/[^\\d.]+/', '', $percent );
+		$percent = edd_sanitize_amount( $percent );
 
 		$fee = 0;
 
