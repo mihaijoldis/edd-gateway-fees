@@ -6,8 +6,6 @@ if ( !defined( 'ABSPATH' ) ) {
 class EDD_GF_Frontend {
 	public function __construct() {
 
-		edd_debug_log( 'Gateway Fees: EDD_GF_Frontend running' );
-
 		add_action( 'init', array( $this, 'default_gateway_fee' ) );
 		add_action( 'wp_ajax_edd_calculate_gateway_fees', array( $this, 'recalculate_gateway_fees' ) );
 		add_action( 'wp_ajax_nopriv_edd_calculate_gateway_fees', array( $this, 'recalculate_gateway_fees' ) );
@@ -15,13 +13,11 @@ class EDD_GF_Frontend {
 
 	function default_gateway_fee() {
 
-		edd_debug_log( 'Gateway Fees: default_gateway_fee() running' );
-
 		EDD()->fees->remove_fee( 'gateway_fee' );
 
 		if ( edd_get_cart_total() == 0 ) {
 
-			edd_debug_log( 'Gateway Fees: cart total was 0' );
+			edd_debug_log( 'Gateway Fees default_gateway_fee(): cart total was 0 so not running' );
 
 			return;
 		}
@@ -40,7 +36,7 @@ class EDD_GF_Frontend {
 
 		if ( $fee !== '0' && $fee !== '0.0' && $fee !== '0.00' ) {
 
-			edd_debug_log( 'Gateway Fees: adding fee in default_gateway_fee function' );
+			edd_debug_log( 'Gateway Fees: adding fee in default_gateway_fee function.' );
 
 			EDD()->fees->add_fee( $fee, $label, 'gateway_fee' );
 		}
@@ -48,12 +44,10 @@ class EDD_GF_Frontend {
 
 	function gateway_fee( $gateway = false ) {
 
-		edd_debug_log( 'Gateway Fees: gateway_fee() running' );
-
 		EDD()->fees->remove_fee( 'gateway_fee' );
 
 		if ( edd_get_cart_total() == 0 ) {
-			edd_debug_log( 'Gateway Fees: cart total was 0' );
+			edd_debug_log( 'Gateway Fees gateway_fee(): cart total was 0 so not running' );
 			return;
 		}
 
