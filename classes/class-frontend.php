@@ -94,31 +94,27 @@ class EDD_GF_Frontend {
 		edd_debug_log( 'Gateway Fees: flat rate is ' . $flat );
 
 		// sanitize flat
-		$flat = preg_replace( '/[^\\d.]+/', '', $flat );
+		$flat = edd_sanitize_amount( $flat );
 
 		edd_debug_log( 'Gateway Fees: sanitized flat rate is ' . $flat );
 
-		if ( ! empty( $flat ) && ! empty( $percent ) ) {
+		if ( '0.00' !== $flat && '0.00' !== $percent ) {
 			// paypal style
-			$percent = $percent/100;
-			$fee     = ( $total + $flat ) / ( 1 - $percent );
-			$fee     = round( $fee, 2 );
-			$fee     = $fee - $total;
+			$percent /= 100;
+			$fee     = ( $total * $percent );
+			$fee     = round( $fee + $flat, 2 );
 			edd_debug_log( 'Gateway Fees: Paypal style fee is ' . $fee );
+		} else if ( '0.00' !== $flat ) {
+			// simple add flat fee
+			$fee     = $flat;
+			edd_debug_log( 'Gateway Fees: Simple style fee is ' . $fee );
+		} else if ( '0.00' !== $percent ) {
+			// simple add percentage fee
+			$percent /= 100;
+			$fee     = ( $total * $percent );
+			$fee     = round( $fee, 2 );
+			edd_debug_log( 'Gateway Fees: Percentage style fee is ' . $fee );
 		}
-		else if ( ! empty( $flat ) ) {
-				// simple add flat fee
-				$fee     = $flat;
-				edd_debug_log( 'Gateway Fees: Simple style fee is ' . $fee );
-			}
-		else if ( ! empty( $percent ) ) {
-				// simple add percentage fee
-				$percent = $percent / 100;
-				$fee     = ( $total ) / ( 1 - $percent );
-				$fee     = round( $fee, 2 );
-				$fee     = $fee - $total;
-				edd_debug_log( 'Gateway Fees: Percentage style fee is ' . $fee );
-			}
 
 		edd_debug_log( 'Gateway Fees: Fee returned from  calculate_gateway_fee: ' . $fee );
 
